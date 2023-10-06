@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.0;
 
 import "../node_modules/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "../node_modules/@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
@@ -143,7 +143,7 @@ contract UserDataStorage is
             withdrawalAmount >= 20,
             "Minimum Withdrawal amount should be greater than 20CFT"
         );
-        require(totalWithdrawalBalance >= 0, "Total balance");
+        require(totalWithdrawalBalance > 0, "Total balance");
         require(bytes(paymentMode).length > 0, "Invalid payment mode");
         require(
             remainingWithdrawalBalance ==
