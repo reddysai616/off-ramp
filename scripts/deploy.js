@@ -14,10 +14,10 @@ async function main() {
   const userManagement = await UserDataStorage.deploy();
 
   // waiting for the contract to be mined
-  // await userManagement.wait();
+  await userManagement.wait();
 
   // printing the address
-  console.log("UserManagement deployed to:", userManagement.address);
+  console.log("UserManagement deployed to:", userManagement.target);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
